@@ -1,4 +1,4 @@
-# Simple Jupyterhub docker-image with
+# Simple Jupyterhub docker-image with admin-panel
 ## What's differrent:
 
  - Added admin-user
