@@ -1,8 +1,7 @@
 FROM python
 
-#RUN \
-#    apt update && \
-#    apt install -y python3
+ENV ADMUSER=tesslime
+ENV ADMPASS=teashop
 
 RUN \
     pip install --upgrade pip && \
@@ -12,13 +11,9 @@ RUN \
     apt-get install -y nodejs && \
     curl https://www.npmjs.com/install.sh | sh && \ 
     npm install -g configurable-http-proxy 
-
-RUN \
-    useradd kratos --create-home && \
-    usermod -aG root kratos && \
-    echo "gadawar\ngadawar" | passwd kratos
  
 COPY ./jupyterhub_config.py ./
-#RUN python3 ./bootstrap.py --admin kratos
+COPY ./docker-entrypoint.sh ./
+RUN chmod +x /docker-entrypoint.sh
    
-CMD ["jupyterhub"]
+CMD ["/docker-entrypoint.sh"]
