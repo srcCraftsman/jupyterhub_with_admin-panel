@@ -4,6 +4,8 @@
  - Added admin-user
  - By-defaul admin-user can create system users
  - Admin user can be setup by environment-variable durring the container start
+ - Root-user password can be modified by ROOTPASSWD env variable
+ - Default ROOT passwd if "teashop"
 
 
 ## How can i use it:
@@ -13,7 +15,7 @@
 - Default admin-username: `tesslime` password: `teashop`
 
 ## How can i setup my own admin-user/password:
-- `docker run -d --name my-jhubadm-name  -p 8000:8000 -e ADMUSER=my_custom_user -e ADMPASS=my_custom_password tesslime/jhubadm`
+- `docker run -d --name my-jhubadm-name  -p 8000:8000 -p 222:22 -e ADMUSER=my_custom_user -e ADMPASS=my_custom_password -e ROOTPASSWD=my_custom_root_password tesslime/jhubadm`
 
 ## What if i need to store data on my host-machine:
 - In this image data stored in default users folders in "/home" directory, so you just need the command below.
