@@ -7,6 +7,7 @@
  - Root-user password can be modified by ROOTPASSWD env variable
  - Default ROOT passwd if "teashop"
  - Created new image with spark, scala, pyspark
+ - Added orcale-client for using oracle-libraries
 
 
 ## How can i use it:
