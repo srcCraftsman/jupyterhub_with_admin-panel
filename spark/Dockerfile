@@ -10,9 +10,9 @@ RUN apt update && \
 RUN apt-get install -y scala && \
     pip3 install py4j
 
-RUN wget http://apache-mirror.rbc.ru/pub/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz && \
-    tar -xzvf spark-3.0.0-preview2-bin-hadoop2.7.tgz && \
-    mv spark-3.0.0-preview2-bin-hadoop2.7 /opt/spark-3.0 && \
+RUN wget https://apache-mirror.rbc.ru/pub/apache/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz -o  && \
+    tar -xzvf spark-3.0.1-bin-hadoop2.7.tgz && \
+    mv spark-3.0.1-bin-hadoop2.7 /opt/spark-3.0 && \
     ln -s /opt/spark-3.0 /opt/spark
 
 RUN echo "export SPARK_HOME='/opt/spark-3.0'" >> /etc/profile && \
